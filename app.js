@@ -2,8 +2,8 @@ const http = require('http');
 
 //to make this more modern use JS import
 
-const hostname = '127.0.0.1';
-const port = process.env.PORT || 3000;
+// const hostname = '127.0.0.1'; // this is the localhost
+const port = process.env.PORT || 3000; //localhost: 3000 - says if this fails use localhost
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
@@ -11,6 +11,6 @@ const server = http.createServer((req, res) => {
     res.end('Hello Darkness');
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+    console.log(`Server is now running at ${port}/`);
 });
